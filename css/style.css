@@ -1,0 +1,361 @@
+:root {
+  --background-color: #a9a9a9;
+  --main-background-color: #8e8e8e;
+  --text-color: hsl(0, 0%, 10%);
+  --outline-color: black;
+
+  --map-border-color: #808080;
+  --button-background-color: #c0c0c0;
+  --button-border-color: #808080;
+  --button-border-color-after: #ececec;
+  --button-background-color-hover: #c9c9c9;
+  --button-border-color-hover: #f0f0f0;
+  --button-background-clicked: #c9c9c9;
+
+  --button-background-color-active: #bdbdbd;
+  --button-border-color-active: #999;
+
+  --data-number-1-color: #0000ff;
+  --data-number-2-color: #008100;
+  --data-number-3-color: #ff1300;
+  --background-color-bomb: red;
+  --background-color-bomb-shadow: rgba(255, 0, 0, 0.5);
+
+  --background-color-bomb-flagged: #5b6b5b;
+  --background-color-bomb-flagged-shadow: rgba(168, 168, 168, 0.5);
+
+  --background-color-flag: #008100;
+  --background-color-flag-shadow: rgba(0, 129, 0, 0.5);
+
+  /* menus */
+  --menus-content-background-color: rgb(180, 180, 180);
+  --button-class-text-color: hsl(0, 0%, 10%);
+  --menus-lines-colors: hsl(0, 0%, 90%);
+  --configMenuDiv-background-color-hover: hsl(0, 0%, 75%);
+
+  --a: hsl(201, 67%, 25%);
+  --a-hover: hsl(202, 39%, 47%);
+  --a-focus: hsl(202, 79%, 36%);
+
+  --seeGitRepo-color: hsl(0, 0%, 0%);
+}
+
+[data-color="dark"] {
+  --background-color: #2f2f2f;
+  --main-background-color: #424242;
+  --text-color: hsl(0, 0%, 90%);
+  --outline-color: white;
+
+  --map-border-color: #5f5f5f;
+  --button-background-color: #4f4f4f;
+  --button-border-color: #5f5f5f;
+  --button-border-color-after: #808080;
+  --button-background-color-hover: #5d5d5d;
+  --button-border-color-hover: #8f8f8f;
+  --button-background-clicked: #424242;
+
+  --button-background-color-active: #727272;
+  --button-border-color-active: #424242;
+
+  --data-number-1-color: #6060ce;
+  --data-number-2-color: #60c760;
+  --data-number-3-color: #c46b65;
+  --background-color-bomb: #d84136;
+  --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
+
+  --background-color-bomb-flagged: #5b6b5b;
+  --background-color-bomb-flagged-shadow: rgba(168, 168, 168, 0.5);
+
+  --background-color-flag: #219021;
+  --background-color-flag-shadow: rgba(33, 144, 33, 0.5);
+
+  /* menus */
+  --menus-content-background-color: hsl(0, 0%, 38%);
+  --button-class-text-color: hsl(0, 0%, 90%);
+  --menus-lines-colors: hsl(0, 0%, 30%);
+  --configMenuDiv-background-color-hover: hsl(0, 0%, 45%);
+
+  --a: hsl(203, 56%, 72%);
+  --a-hover: hsl(202, 100%, 93%);
+  --a-focus: hsl(0, 0%, 100%);
+
+  --seeGitRepo-color: hsl(0, 0%, 100%);
+}
+
+[data-color="darkBlue"] {
+  --background-color: #212529;
+  --main-background-color: #2f353a;
+  --text-color: hsl(0, 0%, 90%);
+  --outline-color: white;
+
+  --map-border-color: #505960;
+  --button-background-color: #2e3439;
+  --button-border-color: #505960;
+  --button-border-color-after: #63696e;
+  --button-background-color-hover: #4e565d;
+  --button-border-color-hover: #838a90;
+  --button-background-clicked: #1e2225;
+
+  --button-background-color-active: #50585f;
+  --button-border-color-active: #343b42;
+
+  --data-number-1-color: #6c78af;
+  --data-number-2-color: #20c997;
+  --data-number-3-color: #ff79c6;
+
+  --background-color-bomb: #d84136;
+  --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
+
+  --background-color-bomb-flagged: #4e555d;
+  --background-color-bomb-flagged-shadow: 1e2225;
+
+  --background-color-flag: #20c997;
+  --background-color-flag-shadow: rgba(33, 144, 33, 0.5);
+
+  /* menus */
+  --menus-content-background-color: hsl(213, 10%, 23%);
+  --button-class-text-color: hsl(0, 0%, 90%);
+  --menus-lines-colors: hsl(0, 0%, 30%);
+  --configMenuDiv-background-color-hover: hsl(215, 8%, 31%);
+
+  --a: hsl(203, 56%, 72%);
+  --a-hover: hsl(202, 100%, 93%);
+  --a-focus: hsl(0, 0%, 100%);
+
+  --seeGitRepo-color: hsl(0, 0%, 100%);
+}
+
+[data-color="lightBlue"] {
+  --background-color: #c4d0de;
+  --main-background-color: #8ea2b8;
+  --text-color: hsl(0, 0%, 90%);
+  --outline-color: white;
+
+  --map-border-color: #617891;
+  --button-background-color: #60768f;
+  --button-border-color: #617891;
+  --button-border-color-after: #7d93ab;
+  --button-background-color-hover: #758ca8;
+  --button-border-color-hover: #889eb7;
+  --button-background-clicked: #495c71;
+  --button-background-color-active: #728eb0;
+  --button-border-color-active: #536b86;
+  --data-number-1-color: #8096f9;
+  --data-number-2-color: #20c997;
+  --data-number-3-color: #ff79c6;
+  --background-color-bomb: #d84136;
+  --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
+  --background-color-bomb-flagged: #7d93ab;
+  --background-color-bomb-flagged-shadow: #495c71;
+  --background-color-flag: #20c997;
+  --background-color-flag-shadow: rgba(33, 144, 33, 0.5);
+
+  --menus-content-background-color: #596e86;
+  --button-class-text-color: hsl(0deg 0% 100%);
+  --menus-lines-colors: hsl(0, 0%, 30%);
+  --configMenuDiv-background-color-hover: rgb(107, 129, 155);
+
+  --a: hsl(201, 67%, 25%);
+  --a-hover: hsl(202, 39%, 47%);
+  --a-focus: hsl(202, 79%, 36%);
+
+  --seeGitRepo-color: hsl(0, 0%, 0%);
+}
+
+/* 
+[data-color="lightBlue"] {
+  --background-color: #b9cadc;
+  --main-background-color: #788ea5;
+  --text-color: hsl(0, 0%, 90%);
+
+  --map-border-color: #324356;
+  --button-background-color: #60768f;
+  --button-border-color: #324356;
+  --button-border-color-after: #7d93ab;
+  --button-background-color-hover: #758ca8;
+  --button-border-color-hover: #889eb7;
+  --button-background-clicked: #495c71;
+
+  --button-background-color-active: #44566b;
+  --button-border-color-active: #334457;
+
+  --data-number-1-color: #8096f9;
+  --data-number-2-color: #20c997;
+  --data-number-3-color: #ff79c6;
+  --background-color-bomb: #d84136;
+  --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
+
+  --background-color-bomb-flagged: #7d93ab;
+  --background-color-bomb-flagged-shadow: #495c71;
+
+  --background-color-flag: #20c997;
+  --background-color-flag-shadow: rgba(33, 144, 33, 0.5);
+
+  * menus *
+  --menus-content-background-color: #596e86;
+  --button-class-text-color: hsl(0, 0%, 90%);
+  --menus-lines-colors: hsl(0, 0%, 30%);
+  --configMenuDiv-background-color-hover: rgb(107, 129, 155);
+} */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: "Courier New", Courier, monospace;
+}
+
+html {
+  background: var(--background-color);
+}
+
+body {
+  background: var(--background-color);
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  overflow: auto;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background: var(--main-background-color);
+  padding: 1em;
+}
+
+:focus-visible {
+  outline: solid 0.2rem var(--outline-color);
+  z-index: 11;
+}
+
+/* config */
+#config {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#config[data-stack] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+#config[data-stack] > .quickStart {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  #config {
+    display: grid;
+    grid-template-columns: 20ch;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+  #config > .square {
+    width: 100%;
+  }
+}
+/* 396 */
+
+input {
+  background-color: var(--button-background-color);
+  color: var(--text-color);
+  border: solid 0.1em var(--button-border-color);
+}
+
+input:focus {
+  background-color: var(--button-background-color-hover);
+  color: var(--text-color);
+  border: solid 0.1em var(--button-border-color-after);
+}
+
+/* ToolTip */
+#ToolTip {
+  background-color: rgb(255, 255, 255);
+  border: solid 0.15em black;
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  --size: 1em;
+  --half-size: -0.5em;
+  animation: ToolTipAnimate 1s ease-out forwards;
+  box-shadow: 0 1em 1em -0.5em hsla(0, 0%, 0%, 0.5);
+
+  grid-template-columns: 1fr auto;
+  gap: 0.5em;
+  width: clamp(min(10em, 100vw), 20em, 100vw);
+}
+
+#ToolTip__p {
+  color: black;
+}
+
+@keyframes ToolTipAnimate {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#ToolTip::after {
+  content: "";
+  position: absolute;
+
+  bottom: var(--half-size);
+  left: calc(50% + var(--half-size));
+  width: var(--size);
+  height: var(--size);
+  border: solid 0.15em transparent;
+  background-color: white;
+  border-bottom-color: black;
+  border-right-color: black;
+  transform: rotate(45deg);
+}
+
+#closeToolTip {
+  height: 1em;
+  width: 1em;
+}
+
+/* links */
+a {
+  color: var(--a);
+  /* color: hsl(201, 67%, 25%); */
+}
+
+a:hover {
+  color: var(--a-hover);
+  /* color: hsl(202, 39%, 47%); */
+}
+
+a:focus {
+  color: var(--a-focus);
+  /* color: hsl(202, 79%, 36%); */
+}

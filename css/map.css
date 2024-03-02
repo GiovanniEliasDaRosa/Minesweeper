@@ -1,0 +1,203 @@
+#map {
+  display: grid;
+  justify-content: left;
+  border: solid var(--map-border-color);
+  border-width: 0.1em 0 0 0.1em;
+  user-select: none;
+}
+
+button {
+  display: flex;
+  position: relative;
+  font-size: 2rem;
+  line-height: 1em;
+  width: 3rem;
+  height: 3rem;
+  background: var(--button-background-color);
+  border: solid var(--button-border-color);
+  border-width: 0 0.1em 0.1em 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+button[data-small] {
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+button:before,
+button:after {
+  content: "";
+  position: absolute;
+}
+
+button:after {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.1em outset var(--button-border-color-after);
+}
+
+button:is(:hover, :focus-visible) {
+  background: var(--button-background-color-hover);
+}
+
+button:is(:hover, :focus-visible):after {
+  border: 0.1em outset var(--button-border-color-hover);
+}
+
+button[data-clicked] {
+  background: var(--button-background-clicked);
+  pointer-events: none;
+  animation: clicked 0.25s cubic-bezier(0.2, 0.5, 0.5, 1);
+  color: white;
+}
+
+button[data-clicked]:after {
+  border: none;
+}
+
+/* normal */
+
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 0.1em var(--button-background-color);
+    background: var(--button-background-color);
+  }
+  10%,
+  20% {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 0.1em var(--button-background-color);
+  }
+  100% {
+    transform: scale(1);
+    background: var(--button-background-clicked);
+  }
+}
+
+/* visual */
+button:not([data-clicked], .button) {
+  color: #ffffff00 !important;
+}
+
+/* button[data-bomb] {
+  background-color: rgba(255, 0, 0, 0.2);
+} */
+
+button[data-number="1"] {
+  color: var(--data-number-1-color);
+}
+
+button[data-number="2"] {
+  color: var(--data-number-2-color);
+}
+
+button[data-number="3"] {
+  color: var(--data-number-3-color);
+}
+
+/* bomb */
+button[data-bomb][data-clicked] {
+  background-color: var(--background-color-bomb);
+  animation: clickedBomb 2s cubic-bezier(0.2, 0.5, 0.5, 1);
+  z-index: 10;
+}
+
+@keyframes clickedBomb {
+  0% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 0.1em var(--background-color-bomb);
+    background: var(--button-background-color);
+    box-shadow: 0 0 0.5em 0.5em var(--background-color-bomb-shadow);
+  }
+  10%,
+  20% {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 0.1em var(--background-color-bomb);
+    box-shadow: 0 0 0 1em var(--background-color-bomb);
+  }
+  100% {
+    transform: scale(1);
+    background: var(--background-color-bomb);
+  }
+}
+
+button[data-bomb][data-clicked][data-clicked-won] {
+  animation: clickedBombWon 2s cubic-bezier(0.2, 0.5, 0.5, 1) forwards;
+}
+
+@keyframes clickedBombWon {
+  0% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 0.1em var(--button-background-color);
+    background: var(--button-background-color);
+    box-shadow: 0 0 0.5em 0.5em var(--background-color-bomb-flagged-shadow);
+  }
+  10%,
+  20% {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 0.1em var(--button-background-color-hover);
+    box-shadow: 0 0 0 1em var(--button-background-color-hover);
+  }
+  100% {
+    transform: scale(1);
+    background: var(--background-color-bomb-flagged);
+  }
+}
+
+button[data-flagged][data-bomb][data-clicked] {
+  background-color: var(--background-color-flag);
+  animation: clickedFlaggedBomb 2s cubic-bezier(0.2, 0.5, 0.5, 1) forwards;
+  z-index: 10;
+}
+
+@keyframes clickedFlaggedBomb {
+  0% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 0.1em var(--background-color-flag);
+    background: var(--button-background-color);
+    box-shadow: 0 0 0.5em 0.5em var(--background-color-flag-shadow);
+  }
+  10%,
+  20% {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 0.1em var(--background-color-flag);
+    box-shadow: 0 0 0 1em var(--background-color-flag);
+  }
+  100% {
+    transform: scale(1);
+    background: var(--background-color-flag);
+  }
+}
+
+/* flag */
+button[data-flagged]::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  content: "🚩";
+  color: white !important;
+}
+
+button:active:not([data-flagged]) {
+  background: var(--button-background-color-active);
+}
+
+button:active:not([data-flagged])::after {
+  border: solid var(--button-border-color-active);
+  border-width: 0.1em 0 0 0.1em;
+}
+
+.help {
+  box-shadow: inset 0 0 0 0.15em hsla(0, 0%, 100%, 0.25) !important;
+  transition: 0.25s linear;
+}
+
+.help:not([data-clicked], [data-flagged]) {
+  box-shadow: inset 0 0 0 0.2em hsla(0, 0%, 100%, 1) !important;
+}

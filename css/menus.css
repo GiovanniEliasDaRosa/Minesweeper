@@ -1,0 +1,196 @@
+.menus {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.menus[disabled] {
+  animation: animateOut 0.5s ease-out forwards;
+}
+
+.menus:not([disabled]) {
+  animation: animateIn 1s ease-out forwards;
+}
+
+@keyframes animateOut {
+  0% {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes animateIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.menus__content {
+  padding: 1em;
+  background-color: var(--menus-content-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: clamp(min(12em, 100vw), 30em, 100vw);
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.menus[disabled] .menus__content {
+  animation: animateContentOut 0.25s cubic-bezier(0.61, 0.57, 0.32, 1.03) forwards;
+}
+
+.menus:not([disabled]) .menus__content {
+  animation: animateContentIn 0.5s cubic-bezier(0, 1.2, 0.9, 1) forwards;
+}
+
+@keyframes animateContentIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes animateContentOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+.menus__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+  gap: 1em;
+}
+
+.menus__closeButton {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.button {
+  width: auto;
+  padding: 0.5em;
+  color: var(--button-class-text-color) !important;
+  font-size: 1rem;
+  height: 2em;
+}
+
+.button::before {
+  position: relative;
+}
+
+.button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Start Menu */
+#configSizes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-block: 0.5em;
+  border-top: solid 0.1em var(--menus-lines-colors);
+  border-bottom: solid 0.1em var(--menus-lines-colors);
+}
+
+.configMapSize {
+  display: grid;
+  grid-template-columns: 5em 4em;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  grid-template-rows: 1fr;
+}
+
+.configMapSize > label {
+  font-weight: 600;
+}
+
+.configMapSize > input {
+  padding: 0.25em;
+  width: 100%;
+  text-align: center;
+}
+
+/* Finish Menu */
+#finishGameMenu__result {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 0.1em solid var(--menus-lines-colors);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalPoints {
+  font-weight: 900;
+}
+
+/* config menu */
+.configMenu__div {
+  display: grid;
+  grid-template-columns: 7.5em auto;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.25em;
+  border-bottom: 0.1em solid var(--menus-lines-colors);
+  cursor: pointer;
+}
+
+.configMenu__div:hover,
+.configMenu__div:focus-within {
+  background-color: var(--configMenuDiv-background-color-hover);
+}
+
+.configMenu__div > p {
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  align-items: center;
+  gap: 0.25em;
+}
+
+#changeMode {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#changeMode,
+#changeLanguage,
+#changeSound {
+  width: 22ch;
+  max-width: 100%;
+}
+
+#seeGitRepo {
+  position: fixed;
+  right: 0.5em;
+  bottom: 0.5em;
+  padding: 0.25em;
+}
+
+#seeGitRepo::before {
+  color: var(--seeGitRepo-color);
+}

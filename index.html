@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/map.css" />
+    <link rel="stylesheet" href="css/menus.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <!-- <link rel="stylesheet" href="css/darkBlue.css" /> -->
+    <!-- <link rel="stylesheet" href="css/lightBlue.css" /> -->
+
+    <script src="js/functions.js"></script>
+    <script src="js/soundManager.js"></script>
+
+    <script src="js/configMenu.js" defer></script>
+    <script src="js/buttons.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="map" tabindex="1"></div>
+      <div id="config">
+        <button class="button" id="openStartNewMenu" data-pos="0">Começar um novo</button>
+        <button class="button quickStart icons nomargin repeat square" data-pos="1"></button>
+        <button class="button icons gear" id="openConfigMenu" data-pos="2">Configurações</button>
+
+        <button class="button" id="finishButton" data-pos="3">Finalizar</button>
+      </div>
+    </main>
+
+    <div class="menus" id="startNewMenu">
+      <div class="menus__content">
+        <div class="menus__header">
+          <h2 id="startNewMenu__h1">Configure o tamanho do mapa</h2>
+          <button
+            class="button menus__closeButton icons nomargin close"
+            id="closeStartNewMenu"
+          ></button>
+        </div>
+        <p id="startNewMenu__p">
+          Defina um valor para a largura e altura do mapa, pode ser entre 8 até 30
+        </p>
+
+        <div id="configSizes">
+          <div class="configMapSize">
+            <label for="width" id="startNewMenu__width">Largura</label>
+            <input type="number" id="widthInput" value="9" />
+          </div>
+
+          <div class="configMapSize">
+            <label for="height" id="startNewMenu__height">Altura</label>
+            <input type="number" id="heightInput" value="9" />
+          </div>
+        </div>
+
+        <p id="mapSize">9 x 9 = 81</p>
+
+        <button class="button" id="startNewButton">Criar</button>
+      </div>
+    </div>
+
+    <div class="menus" id="finishGameMenu">
+      <div class="menus__content">
+        <div class="menus__header">
+          <h1 id="finishGameMenu__title">Parabéns você ganhou!</h1>
+          <button
+            class="button menus__closeButton icons nomargin close"
+            id="closeFinishGame"
+          ></button>
+        </div>
+        <p>💣 <span id="finishGameMenu__bombs">Bombas</span>: <span id="bombsText">99</span></p>
+        <p>🚩 <span id="finishGameMenu__flags">Bandeiras</span>: <span id="flagsText">99</span></p>
+        <p>
+          🚩 <span id="finishGameMenu__correctFlags">Bandiras corretas</span>:
+          <span id="correctFlagsText">99</span>
+        </p>
+        <p>
+          🚩 <span id="finishGameMenu__extraFlags">Bandiras extras</span>:
+          <span id="extraFlagsText">99</span>
+        </p>
+
+        <div id="finishGameMenu__result">
+          <p id="totalPoints">
+            <span id="finishGameMenu__points">Pontos</span>: <span id="pointsText">99</span>
+          </p>
+          <button class="button quickStart icons nomargin repeat"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menus" id="configMenu">
+      <div class="menus__content">
+        <div class="menus__header">
+          <h1 id="configMenu__h1">Configurações</h1>
+          <button
+            class="button menus__closeButton icons nomargin close"
+            id="closeConfigMenu"
+          ></button>
+        </div>
+        <div class="configMenu__div" data-for="changeMode">
+          <p class="icons mode" id="configMenu__mode">Modo</p>
+          <button class="button icons dark" id="changeMode">Modo escuro</button>
+        </div>
+        <div class="configMenu__div" data-for="changeLanguage">
+          <p class="icons language" id="configMenu__language">Língua</p>
+          <button class="button" id="changeLanguage">Português</button>
+        </div>
+        <div class="configMenu__div" data-for="changeSound">
+          <p class="icons sound" id="configMenu__sound">Som</p>
+          <button class="button icons sound" id="changeSound"></button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <audio src="sounds/explosion_1.mp3" data-audio="explosion_1"></audio>
+      <audio src="sounds/explosion_2.mp3" data-audio="explosion_2"></audio>
+      <audio src="sounds/explosion_3.mp3" data-audio="explosion_3"></audio>
+      <audio src="sounds/explosion_1.mp3" data-alt-audio="explosion_1"></audio>
+      <audio src="sounds/explosion_2.mp3" data-alt-audio="explosion_2"></audio>
+      <audio src="sounds/explosion_3.mp3" data-alt-audio="explosion_3"></audio>
+    </div>
+
+    <p id="ToolTip">
+      <span id="ToolTip__p">Você consegue mudar o tema, língua e som aqui</span>
+      <button class="button icons nomargin close" id="closeToolTip"></button>
+    </p>
+
+    <a
+      class="icons brands github"
+      href="https://github.com/GiovanniEliasDaRosa/Minesweeper"
+      target="_blank"
+      id="seeGitRepo"
+      >See Git Hub Repository</a
+    >
+  </body>
+</html>

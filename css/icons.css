@@ -1,0 +1,64 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+
+.icons::before {
+  display: inline-block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.5rem;
+}
+
+.nomargin::before {
+  margin-right: 0;
+}
+
+.square {
+  width: 2em;
+}
+
+.close::before {
+  content: "\f00d";
+}
+
+.gear::before {
+  content: "\f013";
+}
+
+.dark::before {
+  content: "\f186";
+}
+
+.light::before {
+  content: "\f185";
+}
+
+.repeat::before {
+  content: "\f2f9";
+}
+
+.mode::before {
+  content: "\f042";
+}
+
+.language::before {
+  content: "\f1ab";
+}
+
+.sound::before {
+  content: "\f028";
+}
+
+.soundMute::before {
+  content: "\f6a9";
+}
+
+.brands::before {
+  font-family: "Font Awesome 6 Brands";
+}
+
+.github::before {
+  content: "\f09b";
+}
