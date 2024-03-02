@@ -1,6 +1,6 @@
 # Minesweeper
 
-This is a recriation of the classic Minesweeper game
+This is a recreation of the classic Minesweeper game
 
 To make the project a little more complex there is:
 
