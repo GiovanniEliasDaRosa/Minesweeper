@@ -8,6 +8,8 @@ To make the project a little more complex there is:
 - 3 languages ( Portuguese, English, French )
 - Sounds when bombs are pressed ( you turn off in the config menu )
 
+[Click here to play](https://giovannieliasdarosa.github.io/Minesweeper)
+
 ## Translations
 
 - Portuguese and English - Me
