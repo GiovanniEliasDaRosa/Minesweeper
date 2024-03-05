@@ -4,6 +4,8 @@
   border: solid var(--map-border-color);
   border-width: 0.1em 0 0 0.1em;
   user-select: none;
+  max-width: 100%;
+  overflow: auto;
 }
 
 button {
@@ -99,6 +101,26 @@ button[data-number="2"] {
 
 button[data-number="3"] {
   color: var(--data-number-3-color);
+}
+
+button[data-number="4"] {
+  color: var(--data-number-4-color);
+}
+
+button[data-number="5"] {
+  color: var(--data-number-5-color);
+}
+
+button[data-number="6"] {
+  color: var(--data-number-6-color);
+}
+
+button[data-number="7"] {
+  color: var(--data-number-7-color);
+}
+
+button[data-number="8"] {
+  color: var(--data-number-8-color);
 }
 
 /* bomb */

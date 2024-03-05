@@ -15,9 +15,15 @@
   --button-background-color-active: #bdbdbd;
   --button-border-color-active: #999;
 
-  --data-number-1-color: #0000ff;
-  --data-number-2-color: #008100;
-  --data-number-3-color: #ff1300;
+  --data-number-1-color: rgb(0, 0, 255);
+  --data-number-2-color: rgb(0, 129, 0);
+  --data-number-3-color: rgb(255, 19, 0);
+  --data-number-4-color: rgb(1, 0, 140);
+  --data-number-5-color: rgb(122, 4, 2);
+  --data-number-6-color: rgb(10, 125, 128);
+  --data-number-7-color: rgb(0, 0, 0);
+  --data-number-8-color: rgb(128, 128, 128);
+
   --background-color-bomb: red;
   --background-color-bomb-shadow: rgba(255, 0, 0, 0.5);
 
@@ -60,6 +66,12 @@
   --data-number-1-color: #6060ce;
   --data-number-2-color: #60c760;
   --data-number-3-color: #c46b65;
+  --data-number-4-color: rgb(98, 98, 255);
+  --data-number-5-color: rgb(255, 52, 48);
+  --data-number-6-color: rgb(120, 250, 255);
+  --data-number-7-color: rgb(208, 208, 208);
+  --data-number-8-color: rgb(158, 158, 158);
+
   --background-color-bomb: #d84136;
   --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
 
@@ -102,6 +114,11 @@
   --data-number-1-color: #6c78af;
   --data-number-2-color: #20c997;
   --data-number-3-color: #ff79c6;
+  --data-number-4-color: rgb(170, 170, 255);
+  --data-number-5-color: rgb(255, 124, 122);
+  --data-number-6-color: rgb(158, 244, 247);
+  --data-number-7-color: rgb(208, 208, 208);
+  --data-number-8-color: rgb(158, 158, 158);
 
   --background-color-bomb: #d84136;
   --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
@@ -143,6 +160,12 @@
   --data-number-1-color: #8096f9;
   --data-number-2-color: #20c997;
   --data-number-3-color: #ff79c6;
+  --data-number-4-color: rgb(144, 144, 255);
+  --data-number-5-color: rgb(255, 87, 84);
+  --data-number-6-color: rgb(120, 250, 255);
+  --data-number-7-color: rgb(0, 0, 0);
+  --data-number-8-color: rgb(128, 128, 128);
+
   --background-color-bomb: #d84136;
   --background-color-bomb-shadow: rgba(216, 65, 54, 0.5);
   --background-color-bomb-flagged: #7d93ab;
@@ -229,6 +252,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
   gap: 1em;
   background: var(--main-background-color);
   padding: 1em;
@@ -264,7 +288,7 @@ main {
 @media (max-width: 500px) {
   #config {
     display: grid;
-    grid-template-columns: 20ch;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;

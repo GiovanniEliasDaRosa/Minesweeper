@@ -16,7 +16,15 @@ var died = false;
 
 var maxUncoverSpeed = 10;
 
-var timer;
+var timer, subtimer;
+var holding = false;
+var pos = {
+  x: 0,
+  y: 0,
+};
+var waitAfterFlag = false;
+
+const IsMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 function StartNewGame() {
   flags = 0;
@@ -137,33 +145,45 @@ function CreateNewButton(x, y) {
   if (width > 25 || height > 25) {
     button.setAttribute("data-small", "");
   }
-
   button.setAttribute("onclick", `Clicked(this, ${x}, ${y})`);
 
-  button.addEventListener("touchstart", () => {
-    console.log("touchstart");
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      Flag(button, x, y);
-    }, 1000);
-  });
-
-  button.addEventListener("touchend", () => {
-    console.log("touchend");
-    if (timer) {
+  if (IsMobile) {
+    button.addEventListener("touchstart", (e) => {
       clearTimeout(timer);
-    }
-  });
+      clearTimeout(subtimer);
+      timer = setTimeout(() => {
+        holding = true;
+        waitAfterFlag = true;
+        Flag(button, x, y);
+        holding = false;
+        subtimer = setTimeout(() => {
+          waitAfterFlag = false;
+        }, 250);
+      }, 250);
+    });
 
-  button.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-    Flag(button, x, y);
-  });
+    button.addEventListener("touchend", (e) => {
+      clearTimeout(timer);
+      clearTimeout(subtimer);
+      subtimer = setTimeout(() => {
+        waitAfterFlag = false;
+      }, 250);
+      holding = false;
+    });
+  } else {
+    button.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      Flag(button, x, y);
+    });
+  }
 
   mapElement.appendChild(button);
 }
 
 function Clicked(button, x, y) {
+  if (waitAfterFlag) {
+    return;
+  }
   if (resetting) {
     return;
   }
