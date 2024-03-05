@@ -1,6 +1,6 @@
 # Minesweeper
 
-![Cover Image](https://github.com/GiovanniEliasDaRosa/Minesweeper/MineSweeper_Card.png)
+![Cover Image](https://raw.githubusercontent.com/GiovanniEliasDaRosa/Minesweeper/main/MineSweeper_Card.png)
 
 This is a recreation of the classic Minesweeper game
 
