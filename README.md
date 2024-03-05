@@ -1,5 +1,7 @@
 # Minesweeper
 
+![Cover Image](https://github.com/GiovanniEliasDaRosa/Minesweeper/MineSweeper_Card.png)
+
 This is a recreation of the classic Minesweeper game
 
 To make the project a little more complex there is:
